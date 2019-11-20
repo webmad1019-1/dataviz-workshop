@@ -1,22 +1,52 @@
-function requestDataModels() {
+class ChartModel {
+  constructor() {
+    switch (this._randomInt(1, 3)) {
+      case 1:
+        this.type = "bar";
+        break;
+      case 2:
+        this.type = "radar";
+        break;
+      case 3:
+        this.type = "doughnut";
+        break;
+    }
+  }
+
+  request() {
+    return axios.get(`http://localhost:3000/${this.type}`);
+  }
+
+  _randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+}
+
+function requestChartDataModels() {
   return Array(4)
     .fill()
     .map(() => {
-      return axios.get("http://localhost:3000/radar");
+      return new ChartModel();
     });
 }
 
 let charts = [];
 
-Promise.all(requestDataModels()).then(dataModels => {
+let chartDataModels = requestChartDataModels();
+
+Promise.all(
+  chartDataModels.map(chartModel => {
+    return chartModel.request();
+  })
+).then(dataModels => {
   dataModels.forEach((dataModel, idx) => {
     var ctx = document.getElementById(`canvas${idx + 1}`).getContext("2d");
-    Configs.radar.title = `Radar ${idx + 1}`
-    
+    Configs.radar.title = `Radar ${idx + 1}`;
+
     let chart = new Chart(ctx, {
-      type: "radar",
+      type: chartDataModels[idx].type,
       data: dataModel.data,
-      options: Configs.radar
+      options: Configs[chartDataModels[idx].type]
     });
     charts.push(chart);
   });
@@ -35,7 +65,11 @@ Promise.all(requestDataModels()).then(dataModels => {
 });
 
 document.getElementById("refresh").addEventListener("click", function() {
-  Promise.all(requestDataModels()).then(dataModels => {
+  Promise.all(
+    chartDataModels.map(chartModel => {
+      return chartModel.request();
+    })
+  ).then(dataModels => {
     charts.forEach((chart, idx) => {
       let data = dataModels[idx].data;
 

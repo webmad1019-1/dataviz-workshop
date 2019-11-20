@@ -22,7 +22,7 @@ router.get("/bar", (req, res, next) => {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
       {
-        label: "Dataset 1",
+        label: "Set 1",
         backgroundColor: `rgba(255, 0, 0, .5)`,
         borderColor: "red",
         borderWidth: 1,
@@ -37,7 +37,7 @@ router.get("/bar", (req, res, next) => {
         ]
       },
       {
-        label: "Dataset 2",
+        label: "Set 2",
         backgroundColor: `rgba(0, 0, 255, .5)`,
         borderColor: "blue",
         borderWidth: 1,
@@ -68,7 +68,7 @@ router.get("/radar", (req, res, next) => {
     ],
     datasets: [
       {
-        label: "My First dataset",
+        label: "Set 1",
         backgroundColor: "rgba(255, 0, 0, 0.5)",
         borderColor: "rgba(255, 0, 0)",
         pointBackgroundColor: "rgba(255, 0, 0)",
@@ -83,7 +83,7 @@ router.get("/radar", (req, res, next) => {
         ]
       },
       {
-        label: "My Second dataset",
+        label: "Set 2",
         backgroundColor: "rgba(0, 0, 255, 0.5)",
         borderColor: "rgba(255, 0,0 , 0.5)",
         pointBackgroundColor: "rgba(255, 0, 0, 0.5)",
@@ -113,7 +113,7 @@ router.get("/doughnut", (req, res, next) => {
           randomScalingFactorDoughnut()
         ],
         backgroundColor: ["red", "orange", "yellow", "green", "blue"],
-        label: "Dataset 1"
+        label: "Set 1"
       }
     ],
     labels: ["Red", "Orange", "Yellow", "Green", "Blue"]
