@@ -1,7 +1,7 @@
 Array(4)
   .fill()
   .forEach((_, idx) => {
-    axios.get("http://localhost:4000/barchart").then(barchartData => {
+    axios.get("http://localhost:3000/barchart").then(barchartData => {
       var ctx = document.getElementById(`canvas${idx + 1}`).getContext("2d");
       new Chart(ctx, {
         type: "bar",
