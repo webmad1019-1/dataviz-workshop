@@ -23,7 +23,7 @@ container:nth-child(odd) {
 .container {
     display: table-cell;
     background-color: rgba(255, 255, 255, 0.2);
-    width: 45vw;
+    width: 50vw;
 }
 
 
@@ -42,7 +42,7 @@ container:nth-child(odd) {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.2);
     transition: opacity 0.4s ease-in-out;
-    max-width: 45vw;
+    max-width: 50vw;
 }
 
 .handle {
