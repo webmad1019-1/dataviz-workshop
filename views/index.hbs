@@ -1,0 +1,38 @@
+<header>
+  <div>
+    <img src="images/ironhack.svg" alt="" />
+    <h1>Irongrafana</h1>
+  </div>
+  <button id="refresh">Refresh</button>
+</header>
+<div class="charts-container">
+  <div class="wrapper">
+    <div id="left-lovehandles" class="container">
+      <div class="chart-container">
+        <span class="handle"></span>
+        <canvas id="canvas1"></canvas>
+      </div>
+    </div>
+    <div id="right-lovehandles" class="container">
+      <div class="chart-container">
+        <span class="handle"></span>
+        <canvas id="canvas2"></canvas>
+      </div>
+      <div class="chart-container">
+        <span class="handle"></span>
+        <canvas id="canvas3"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <span class="handle"></span>
+        <canvas id="canvas4"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="javascripts/chart.js/dist/Chart.bundle.js"></script>
+<script src="javascripts/axios/dist/axios.js"></script>
+<script src="javascripts/dragula/dist/dragula.min.js"></script>
+<script src="javascripts/configs.js"></script>
+<script src="javascripts/app.js"></script>

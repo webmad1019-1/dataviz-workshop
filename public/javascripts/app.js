@@ -2,7 +2,7 @@ function requestDataModels() {
   return Array(4)
     .fill()
     .map(() => {
-      return axios.get("http://localhost:3000/barchart");
+      return axios.get("http://localhost:3000/radar");
     });
 }
 
@@ -11,19 +11,12 @@ let charts = [];
 Promise.all(requestDataModels()).then(dataModels => {
   dataModels.forEach((dataModel, idx) => {
     var ctx = document.getElementById(`canvas${idx + 1}`).getContext("2d");
+    Configs.radar.title = `Radar ${idx + 1}`
+    
     let chart = new Chart(ctx, {
-      type: "bar",
+      type: "radar",
       data: dataModel.data,
-      options: {
-        responsive: true,
-        legend: {
-          position: "top"
-        },
-        title: {
-          display: true,
-          text: `Chart.js Bar Chart ${idx + 1}`
-        }
-      }
+      options: Configs.radar
     });
     charts.push(chart);
   });
