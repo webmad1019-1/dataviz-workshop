@@ -1,0 +1,23 @@
+{
+  "name": "dataviz-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmad1019-1/dataviz-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webmad1019-1/dataviz-workshop/issues"
+  },
+  "homepage": "https://github.com/webmad1019-1/dataviz-workshop#readme",
+  "dependencies": {
+    "dragula": "^3.7.2"
+  }
+}
