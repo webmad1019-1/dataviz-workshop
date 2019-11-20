@@ -55,8 +55,6 @@ function getBarchartData() {
     ]
   };
 }
-
-window.onload = function() {
   Array(4)
     .fill()
     .forEach((_, idx) => {
@@ -88,18 +86,17 @@ window.onload = function() {
         }
       );
     });
-};
 
-// document.getElementById('randomizeData').addEventListener('click', function() {
-//   var zero = Math.random() < 0.2 ? true : false;
-//   barChartData.datasets.forEach(function(dataset) {
-//     dataset.data = dataset.data.map(function() {
-//       return zero ? 0.0 : randomScalingFactor();
-//     });
+document.getElementById('refresh').addEventListener('click', function() {
+  var zero = Math.random() < 0.2 ? true : false;
+  barChartData.datasets.forEach(function(dataset) {
+    dataset.data = dataset.data.map(function() {
+      return zero ? 0.0 : randomScalingFactor();
+    });
 
-//   });
-//   window.myBar.update();
-// });
+  });
+  window.myBar.update();
+});
 
 // var colorNames = Object.keys(window.chartColors);
 // document.getElementById('addDataset').addEventListener('click', function() {

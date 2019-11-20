@@ -1,14 +1,32 @@
 body {
-    font-family: Georgia, Helvetica;
+    font-family: 'Titillium Web', sans-serif;
     font-size: 17px;
     color: #ecf0f1;
-    background-color: #942a57;
+    background-color: #2a7494;
     margin: 0 auto;
-    /* max-width: 760px; */
 }
 
 canvas {
     background: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+}
+
+header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    margin-right: 15px;
+    height: 50px;
 }
 
 .wrapper {
@@ -24,14 +42,15 @@ container:nth-child(odd) {
     display: table-cell;
     background-color: rgba(255, 255, 255, 0.2);
     width: 50vw;
+    min-height: 200px;
 }
 
-
-
-.parent {
+.charts-container {
     background-color: rgba(255, 255, 255, 0.2);
-    margin: 50px 0;
+    margin: 50px 10px;
+    margin-top: 0;
     padding: 20px;
+    border-bottom: 1px solid black;
 }
 
 .container .chart-container,
@@ -47,11 +66,9 @@ container:nth-child(odd) {
 
 .handle {
     padding: 0 5px;
-    /* margin-right: 5px; */
     background-color: rgba(198, 187, 187, 0.982);
     cursor: move;
-    /* margin-bottom: 10px; */
-    background-image: url("https://c7.uihere.com/icons/893/690/568/drag-vertical-584342b2fc8aa3c5f48296da82ee82f9.png");
+    background-image: url("img/dragger.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 30px;
