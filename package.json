@@ -1,24 +1,27 @@
 {
-  "name": "dataviz-workshop",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "dev": "DEBUG=api:* nodemon ./bin/www",
+    "dev-windows": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/webmad1019-1/dataviz-workshop.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/webmad1019-1/dataviz-workshop/issues"
-  },
-  "homepage": "https://github.com/webmad1019-1/dataviz-workshop#readme",
   "dependencies": {
-    "chartjs": "^0.3.24",
-    "dragula": "^3.7.2"
+    "axios": "^0.19.0",
+    "body-parser": "^1.18.3",
+    "chart.js": "^2.9.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.0.0",
+    "dragula": "^3.7.2",
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "mongoose": "^5.2.10",
+    "morgan": "^1.9.0",
+    "node-sass-middleware": "^0.11.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
