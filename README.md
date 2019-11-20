@@ -16,7 +16,7 @@ Visit:
 
 ## Install Grafana
 
-Install docker in your machine and then run `docker run -d --name=grafana-xxl -p 3000:3000 monitoringartist/grafana-xxl:latest`
+Install docker in your machine and then run `docker run -d --name=grafana-xxl -p 4000:3000 monitoringartist/grafana-xxl:latest`
 
 Then hit it via http://localhost:3000
 
