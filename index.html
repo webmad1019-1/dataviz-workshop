@@ -1,85 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-      html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-      
-      html,
-      body {
-          overflow: hidden;
-      }
-
-  .wrapper {
-    display: table;
-  }
-
-  container:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.2);
-  }
-
-  .container {
-      display: table-cell;
-      background-color: rgba(255, 255, 255, 0.2);
-      width: 50%;
-  }
-  .container {
-      display: table-cell;
-      background-color: rgba(255, 255, 255, 0.2);
-      width: 50%;
-  }
-  body {
-    font-family: Georgia, Helvetica;
-      font-size: 17px;
-      color: #ecf0f1;
-      background-color: #942A57;
-    margin: 0 auto;
-    max-width: 760px;
-  }
-  .parent {
-    background-color: rgba(255, 255, 255, 0.2);
-      margin: 50px 0;
-      padding: 20px;
-  }
-  .container > div, .gu-mirror {
-    margin: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: opacity 0.4s ease-in-out;
-}
-.handle {
-    padding: 0 5px;
-    margin-right: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
-    cursor: move;
-}
-</style>
-<link rel="stylesheet" href="node_modules/dragula/dist/dragula.min.css">
-</head>
-<body>
-  <div class="parent">
-    <div class="wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Irongrafana</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="node_modules/dragula/dist/dragula.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="parent">
+      <div class="wrapper">
         <div id="left-lovehandles" class="container">
-          
-          <div><span class="handle">+</span>Note that <code>handle</code> element in the <code>moves</code> handler is just the original event target.</div>
+          <div class="chart-container">
+            <span class="handle"></span>
+            <canvas id="canvas1"></canvas>
+          </div>
         </div>
         <div id="right-lovehandles" class="container">
-          <div class=""><span class="handle">+</span>Move me, but you can use the plus sign to drag me around.</div><div><span class="handle">+</span>This might also be useful if you want multiple children of an element to be able to trigger a drag event.</div>
-          
-        <div class=""><span class="handle">+</span>You can also use the <code>moves</code> option to determine whether an element can be dragged at all from a container, <em>drag handle or not</em>.</div></div>
+          <div class="chart-container">
+            <span class="handle"></span>
+            <canvas id="canvas2"></canvas>
+          </div>
+          <div class="chart-container">
+            <span class="handle"></span>
+            <canvas id="canvas3"></canvas>
+          </div>
+
+          <div class="chart-container">
+            <span class="handle"></span>
+            <canvas id="canvas4"></canvas>
+          </div>
+        </div>
       </div>
     </div>
-  <script src="js/dragula.min.js"></script>
-  <script>
-    dragula([document.getElementById("left-lovehandles"), document.getElementById("right-lovehandles")], {
-  moves: function (el, container, handle) {
-    return handle.classList.contains('handle');
-  }
-});
- 
-  </script>
-</body>
+
+    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="js/dragula.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

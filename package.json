@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/webmad1019-1/dataviz-workshop#readme",
   "dependencies": {
+    "chartjs": "^0.3.24",
     "dragula": "^3.7.2"
   }
 }

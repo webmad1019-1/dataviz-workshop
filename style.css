@@ -1,0 +1,58 @@
+body {
+    font-family: Georgia, Helvetica;
+    font-size: 17px;
+    color: #ecf0f1;
+    background-color: #942a57;
+    margin: 0 auto;
+    /* max-width: 760px; */
+}
+
+canvas {
+    background: white;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+container:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: table-cell;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 45vw;
+}
+
+
+
+.parent {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 50px 0;
+    padding: 20px;
+}
+
+.container .chart-container,
+.gu-mirror {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease-in-out;
+    max-width: 45vw;
+}
+
+.handle {
+    padding: 0 5px;
+    /* margin-right: 5px; */
+    background-color: rgba(198, 187, 187, 0.982);
+    cursor: move;
+    /* margin-bottom: 10px; */
+    background-image: url("https://c7.uihere.com/icons/893/690/568/drag-vertical-584342b2fc8aa3c5f48296da82ee82f9.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 30px;
+}
