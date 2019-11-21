@@ -25,3 +25,7 @@ Username / Password: `admin/admin`
 ## Dragula - easy drag and drop
 
 Visit https://bevacqua.github.io/dragula/
+
+## Docker
+
+<img src="https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj">
