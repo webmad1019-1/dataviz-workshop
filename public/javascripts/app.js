@@ -1,3 +1,5 @@
+// this holds the chart type and is able to randomly be of one type
+// also is capable ok making requests to our own API
 class ChartModel {
   constructor() {
     switch (this._randomInt(1, 3)) {
@@ -31,7 +33,6 @@ function requestChartDataModels() {
 }
 
 let charts = [];
-
 let chartDataModels = requestChartDataModels();
 
 Promise.all(
@@ -51,10 +52,11 @@ Promise.all(
     charts.push(chart);
   });
 
+  // configuring the drag and drop
   dragula(
     [
-      document.getElementById("left-lovehandles"),
-      document.getElementById("right-lovehandles")
+      document.getElementById("left-handles"),
+      document.getElementById("right-handles")
     ],
     {
       moves: function(el, container, handle) {
@@ -64,6 +66,7 @@ Promise.all(
   );
 });
 
+// refresh button handler
 document.getElementById("refresh").addEventListener("click", function() {
   Promise.all(
     chartDataModels.map(chartModel => {
